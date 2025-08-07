@@ -13,7 +13,7 @@ router.route("/signup")
 
 router.route("/login")
 .get(userContoller.renderLogin)
-.post(saveRedirectUser, passport.authenticate("local", { failureFlash: true, failureRedirect: "/login" }),userContoller.Login );
+.post( passport.authenticate("local", { failureFlash: true, failureRedirect: "/login" }),saveRedirectUser,userContoller.Login );
 
 router.get("/logout", userContoller.Logout )
 
